@@ -62,9 +62,9 @@ void CmShow::showTinyMat(CStr &title, CMat &m)
 	}
 
 	Mat img;
-	resize(m, img, Size(), scale, scale, CV_INTER_NN);
+	resize(m, img, Size(), scale, scale,cv::INTER_NEAREST);
 	if (img.channels() == 3)
-		cvtColor(img, img, CV_RGB2BGR);
+		cvtColor(img, img, cv::COLOR_RGB2BGR);
 	SaveShow(img, title);
 }
 
@@ -78,5 +78,5 @@ void CmShow::SaveShow(CMat& img, CStr& title)
 	if (title.size() > 4 && title[title.size() - 4] == '.')
 		imwrite(title, img*scale);
 	else if (title.size())
-		imshow(title, img);		
+		imshow(title, img);
 }
