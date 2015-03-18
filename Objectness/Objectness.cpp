@@ -981,6 +981,24 @@ void Objectness::PrintVector(FILE *f, const vecD &v, CStr &name)
 	fprintf(f, "];\n");
 }
 
+struct MatchPathSeparator
+{
+    bool operator()(char ch) const {
+        return ch == '/';
+    }
+};
+
+std::string basename(std::string const& pathname)
+{
+    return std::string(std::find_if(pathname.rbegin(), pathname.rend(), MatchPathSeparator() ).base(), pathname.end());
+}
+
+std::string removeExtension(std::string const& filename)
+{
+    std::string::const_reverse_iterator pivot = std::find(filename.rbegin(), filename.rend(), '.');
+    return pivot == filename.rend() ? filename : std::string(filename.begin(), pivot.base() - 1);
+}
+
 // Write matrix to binary file
 bool Objectness::matWrite(CStr& filename, CMat& _M){
 	Mat M;
@@ -993,6 +1011,11 @@ bool Objectness::matWrite(CStr& filename, CMat& _M){
 	fwrite(headData, sizeof(int), 3, file);
 	fwrite(M.data, sizeof(char), M.step * M.rows, file);
 	fclose(file);
+
+    FileStorage fs(filename + ".yml.gz", FileStorage::WRITE);
+    fs << removeExtension(basename(filename)) << M;
+    fs.release();
+
 	return true;
 }
 
