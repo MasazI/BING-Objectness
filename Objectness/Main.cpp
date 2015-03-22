@@ -8,7 +8,7 @@
 
 #include <glog/logging.h>
 
-void RunObjectness(CStr &resName, double base, int W, int NSS, int numPerSz);
+void RunObjectness(CStr &vocDir, CStr &resName, double base, int W, int NSS, int numPerSz);
 
 void illutrateLoG()
 {
@@ -25,17 +25,21 @@ int main(int argc, char* argv[])
     google::InitGoogleLogging(argv[0]);
     google::InstallFailureSignalHandler();
 
+	if (argc != 2) {
+		std::cout << "Usage: ./BING VOC_DATASET_PATH" << std::endl;
+	}
+
 	//CStr wkDir = "D:/WkDir/DetectionProposals/VOC2007/Local/";
 	//illutrateLoG();
-	RunObjectness("WinRecall.m", 2, 8, 2, 130);
+	RunObjectness(argv[1], "WinRecall.m", 2, 8, 2, 130);
 
 	return 0;
 }
 
-void RunObjectness(CStr &resName, double base, int W, int NSS, int numPerSz)
+void RunObjectness(CStr &vocDir, CStr &resName, double base, int W, int NSS, int numPerSz)
 {
 	srand((unsigned int)time(NULL));
-	DataSetVOC voc("../VOC2007/");
+	DataSetVOC voc(vocDir);
 	voc.loadAnnotations();
 	//voc2007.loadDataGenericOverCls();
 
