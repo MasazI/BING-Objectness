@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.0)
+
 set(INC_DIRS ${BING_SOURCE_DIR}/LibLinear ${BING_SOURCE_DIR}/LibLinear/blas)
 set(LIB_DIRS ${BING_BINARY_DIR}/LibLinear)
 
@@ -8,7 +10,7 @@ if (DEFINED ENV{OPENCV_DIR})
   list(APPEND LIB_DIRS ${OPENCV_DIR}/lib)
 endif (DEFINED ENV{OPENCV_DIR})
 
-include_directories(${INC_DIRS})
+include_directories(${INC_DIRS} /usr/local/include)
 link_directories(${LIB_DIRS})
 
 if (${CMAKE_COMPILER_IS_GNUCXX})
@@ -20,4 +22,4 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OPENMP_FLAG} -O3")
 set(SRC_FILES CmFile.cpp CmShow.cpp DataSetVOC.cpp FilterTIG.cpp Objectness.cpp stdafx.cpp)
 add_library(objectness ${SRC_FILES})
 add_executable(${PROJECT_NAME} ${SRC_FILES} Main.cpp)
-target_link_libraries(${PROJECT_NAME} opencv_highgui opencv_core opencv_imgproc opencv_imgcodecs liblinear blas)
+target_link_libraries(${PROJECT_NAME} opencv_highgui opencv_core opencv_imgproc opencv_imgcodecs liblinear blas glog)

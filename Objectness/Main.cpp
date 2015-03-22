@@ -6,6 +6,8 @@
 #include "ValStructVec.h"
 #include "CmShow.h"
 
+#include <glog/logging.h>
+
 void RunObjectness(CStr &resName, double base, int W, int NSS, int numPerSz);
 
 void illutrateLoG()
@@ -20,6 +22,9 @@ void illutrateLoG()
 
 int main(int argc, char* argv[])
 {
+    google::InitGoogleLogging(argv[0]);
+    google::InstallFailureSignalHandler();
+
 	//CStr wkDir = "D:/WkDir/DetectionProposals/VOC2007/Local/";
 	//illutrateLoG();
 	RunObjectness("WinRecall.m", 2, 8, 2, 130);
