@@ -38,7 +38,8 @@ make
 ```
 
 ### Run
+```
 cd build/Objectness
 ./BING <your vox data path>/
-
+```
 suffix '/' is requirement.
