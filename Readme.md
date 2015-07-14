@@ -17,7 +17,7 @@ These are the results that I obtained using the fast detection variant <br/>
 
 ### Setup 
 Download the [VOC 2007 train data](http://pascallin.ecs.soton.ac.uk/challenges/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
-) and put them in the VOC2007 directory. <br/>
+) and put them in the VOC2007 directory without Annotation. <br/>
 Do not copy the ImageSets directory from the VOC dataset, retain the version supplied with this code. 
 
 Download the [VOC2007 test data] (http://pascallin.ecs.soton.ac.uk/challenges/VOC/voc2007/VOCtest_06-Nov-2007.tar) <br/>
@@ -36,3 +36,9 @@ cd build
 cmake ..
 make
 ```
+
+### Run
+cd build/Objectness
+./BING <your vox data path>/
+
+suffix '/' is requirement.
