@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2D12B796-9724-4FB6-802F-4E317D52BDEC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E2859A63C11349FC2DDE6BA058294EE9C5A4E889</key>
+		<string>https://github.com/MasazI/BING-Objectness.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ObjectnessTrain/ObjectnessTrain.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E2859A63C11349FC2DDE6BA058294EE9C5A4E889</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/MasazI/BING-Objectness.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E2859A63C11349FC2DDE6BA058294EE9C5A4E889</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E2859A63C11349FC2DDE6BA058294EE9C5A4E889</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BING-Objectness</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,4 +1,5 @@
-#include <opencv2/core/types_c.h>
+//#include <opencv2/core/types_c.h>
+#include <opencv2/opencv.hpp>
 #include "stdafx.h"
 #include "Objectness.h"
 #include "CmShow.h"
