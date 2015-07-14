@@ -27,6 +27,8 @@ Unzip the Annotations.zip file in the VOC2007 folder. <br/>
 -Or- <br/>
 Download an OpenCV readable version of [VOC 2007 annotations](http://mmcheng.net/mftp/Data/VOC2007_AnnotationsOpenCV_Readable.7z). 
 
+## Opencv3.0.0
+can use Opencv3.0.0
 
 ### Building from source
 Set OPENCV_DIR set as an environment variable in the shell if it is not present in the standard directories.
