@@ -52,6 +52,8 @@ def convert(filepath):
 										continue
 								if n.tag == "bndbox":
 										line = n.tag + ": "
+								elif n.tag == "name":
+										line = n.tag + ": \"" + n.text + "\"" 
 								else:
 										line = n.tag + ": " + n.text
 								#print "------ element %s" % line
