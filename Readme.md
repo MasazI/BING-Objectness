@@ -17,7 +17,7 @@ These are the results that I obtained using the fast detection variant <br/>
 
 ### Setup 
 Download the [VOC 2007 train data](http://pascallin.ecs.soton.ac.uk/challenges/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
-) and put them in the VOC2007 directory. <br/>
+) and put them in the VOC2007 directory without Annotation. <br/>
 Do not copy the ImageSets directory from the VOC dataset, retain the version supplied with this code. 
 
 Download the [VOC2007 test data] (http://pascallin.ecs.soton.ac.uk/challenges/VOC/voc2007/VOCtest_06-Nov-2007.tar) <br/>
@@ -27,6 +27,8 @@ Unzip the Annotations.zip file in the VOC2007 folder. <br/>
 -Or- <br/>
 Download an OpenCV readable version of [VOC 2007 annotations](http://mmcheng.net/mftp/Data/VOC2007_AnnotationsOpenCV_Readable.7z). 
 
+## Opencv3.0.0
+can use Opencv3.0.0
 
 ### Building from source
 Set OPENCV_DIR set as an environment variable in the shell if it is not present in the standard directories.
@@ -36,3 +38,10 @@ cd build
 cmake ..
 make
 ```
+
+### Run
+```
+cd build/Objectness
+./BING <your vox data path>/
+```
+suffix '/' is requirement.
