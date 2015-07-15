@@ -14,16 +14,28 @@ def convert(filepath):
 				print "d is None"
 				sys.exit()
 		output = "%YAML:1.0\n\nannotation:\n"
-		print "top %s" % d.tag + " " + d.text
+		#print "top %s" % d.tag + " " + d.text
 		if d.tag == "annotation":
+				first_object_flag = True
 				for i, c in enumerate(list(d)):
-						if c.tag == "source" or c.tag == "owner" or c.tag == "size" or c.tag == "object":
-								line = c.tag + ": "
+						if c.tag == "source" or c.tag == "owner" or c.tag == "size":
+										line = c.tag + ":"
+						elif c.tag == "object":
+								if first_object_flag:
+										line = c.tag + ": "
+								else:
+										line = ""
+						elif c.tag == "filename":
+								line = c.tag + ": \"" + c.text + "\""
 						else:
 								line = c.tag + ": " + c.text
-						print "--- list %s" % line
+						#print "--- list %s" % line
 						if c.tag == "source" or c.tag == "size":
 								output += "  " + line + "{"
+						elif c.tag == "object":
+								if first_object_flag:
+										output += "  " + line + "\n"
+										first_object_flag = False
 						else:
 								output += "  " + line + "\n"
 						if c.tag == "object":
@@ -42,7 +54,7 @@ def convert(filepath):
 										line = n.tag + ": "
 								else:
 										line = n.tag + ": " + n.text
-								print "------ element %s" % line
+								#print "------ element %s" % line
 								if n.tag == "bndbox":
 										output += first_block + line + "{"
 										first_block = "      "
