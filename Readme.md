@@ -39,9 +39,12 @@ cmake ..
 make
 ```
 
-### Run
+### Train
 ```
 cd build/Objectness
 ./BING <your vox data path>/
 ```
 suffix '/' is requirement.
+
+### VOC xml to OpenCV yml
+can use python/convert_xml2yml.py
